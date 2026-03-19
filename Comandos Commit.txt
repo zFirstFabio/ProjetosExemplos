@@ -1,0 +1,9 @@
+Fazer commit e atualizar projeto
+
+git status
+
+git add .
+
+git commit -a -m "Nome do comiit"
+
+git push origin main

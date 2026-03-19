@@ -42,15 +42,14 @@ console.log("2. ngOnInit foi chamado! Buscando dados...");
   }
 
   carregarClientesDoBanco(): void {
-    this.clienteService.listarTodos().subscribe({
+    this.clienteService.listarTodos().subscribe({ // Chamamos o Listar todos do Java.
       next: (dados) => {
         console.log("3. Dados chegaram do Java:", dados);
-        
-        // A SOLUÇÃO DEFINITIVA:
+        // Estava com erros de atualizacao visual
         // O setTimeout tira a execução do ciclo atual e joga para o próximo respiro do navegador
         setTimeout(() => {
             this.clientes = dados;
-            this.cdr.detectChanges(); // Força a atualização visual com segurança
+            this.cdr.detectChanges(); // Força a atualização visual 
         }, 1); 
       },
       error: (erro) => {
