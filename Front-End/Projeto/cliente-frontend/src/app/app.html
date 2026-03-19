@@ -1,0 +1,30 @@
+<div class="layout-wrapper">
+    
+    <aside class="sidebar">
+        <div class="logo-container">
+            <h2>Menu principal</h2> 
+        </div>
+
+        <nav class="menu-nav">
+            <button (click)="navegarPara('/home')" class="menu-item"[class.active]="isRotaAtiva('/home')">
+                <i class="pi pi-home"></i>
+                <span>Home</span>
+            </button>
+
+            <button (click)="navegarPara('/cadastro')" class="menu-item"[class.active]="isRotaAtiva('/cadastro')">
+                <i class="pi pi-user-plus"></i>
+                <span>Cadastro</span>
+            </button>
+
+            <button (click)="navegarPara('/pesquisar')" class="menu-item"[class.active]="isRotaAtiva('/pesquisar')">
+                <i class="pi pi-users"></i>
+                <span>Pesquisar</span>
+            </button>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <router-outlet></router-outlet> 
+    </main>
+
+</div>

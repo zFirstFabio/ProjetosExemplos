@@ -1,0 +1,91 @@
+:host {
+    display: block;
+    height: 100vh;
+}
+
+.layout-wrapper {
+    display: flex;
+    height: 100vh;
+    background-color: #f8fafc; 
+}
+
+/* ================================
+   BARRA LATERAL
+   ================================ */
+.sidebar {
+    width: 200px;
+    background-color: #1e293b; 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.logo-container {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #334155;
+    margin-bottom: 1rem;
+}
+
+.logo-container h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #f8fafc;
+}
+
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+}
+
+/* ================================
+   ESTILO DOS BOTÕES DO MENU
+   ================================ */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    color: #cbd5e1;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    
+    /* RESET DE BOTÃO: Tira a cara de botão padrão do HTML */
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse E quando o menu estiver ativo/fixo */
+.menu-item:hover,
+.menu-item.active {
+    background-color: #334155; 
+    color: white;              
+}
+
+.menu-item i {
+    font-size: 1.2rem;
+}
+
+.menu-item:hover {
+    background-color: #334155;
+    color: white;
+}
+
+/* ================================
+   ÁREA DE CONTEÚDO
+   ================================ */
+.main-content {
+    flex: 1; 
+    padding: 2.5rem;
+    overflow-y: auto; 
+}

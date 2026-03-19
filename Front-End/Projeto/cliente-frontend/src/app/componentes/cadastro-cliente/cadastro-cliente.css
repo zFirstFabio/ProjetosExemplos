@@ -1,0 +1,34 @@
+/* Funcoes para tirar o FOCUS do PrimeNG inputMask, que foi colocado e os proximos tambem */
+
+::ng-deep p-inputMask .p-inputtext:focus {
+    box-shadow: none !important;
+    border-color: #ced4da !important; /* Mantém a cor da borda cinza padrão */
+}
+
+/* fundo cinza quando for Somente Leitura */
+::ng-deep p-inputMask .p-inputtext[readonly] {
+    background-color: #f1f5f9 !important; /* Fundo cinza para indicar bloqueio */
+    cursor: default !important; 
+}
+
+.form-linha {
+    display: flex;
+    align-items: flex-start; 
+    width: 70%;
+}
+
+.form-linha label {
+    width: 160px; 
+    font-weight: bold;
+    margin-top: 11px; /* Centraliza o texto visualmente com a caixa do input */
+    margin-right: 5px;
+}
+
+.input-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    
+}

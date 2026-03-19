@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+	<table>
+		<thead>
+			<tr>ID</tr>
+			<tr>Nome</tr>
+			<tr>CPF</tr>
+			<tr>Data de Nascimento</tr>
+			<tr>E-mail</tr>
+		</thead>
+		
+			<tbody th:each="cliente:${ListaClientes}">
+				<tr>
+					<td th:text= "${cliente.id}"> </td>
+					<td th:text= "${cliente.nome}"> </td>
+					<td th:text= "${cliente.cpf}"> </td>
+					<td th:text= "${cliente.dataNascimento}"> </td>
+					<td th:text= "${cliente.email}"> </td>
+					<td colspan = "2">
+						<a th:href="/editarcliente/{id}(id=${client.id)">Editar</a>
+						<a th:href="/excluircliente/{id}(id=${client.id)">Excluir</a>				
+					</td>				
+				</tr>
+			
+			
+			
+			</tbody>
+		
+	
+	</table>
+
+
+
+
+</body>

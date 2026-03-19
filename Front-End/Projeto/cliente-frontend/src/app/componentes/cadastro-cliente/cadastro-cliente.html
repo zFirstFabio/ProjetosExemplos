@@ -1,0 +1,81 @@
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+<h2>{{ tituloTela }}</h2>
+
+<form #meuForm="ngForm" style="display: flex; flex-direction: column; max-width: 600px; gap: 15px;">
+  
+  
+  <div class="form-linha">
+    
+    <label for="nome" style="width: 62px;">Nome: <span style="color: red;">*</span></label>
+    
+    <div class="input-container">
+    <input pInputText type="text" id="nome" name="nome" [(ngModel)]="cliente.nome" required #nome="ngModel" placeholder="Digite o nome" style="width: 100%;">        
+    <small *ngIf="nome.invalid && nome.touched" style="color: red; white-space: nowrap;">Nome Obrigatório.</small>
+    </div>
+  </div>
+
+  <div class="form-linha">
+    <label for="cpf" style="width: 62px;">CPF: <span style="color: red;">*</span></label>
+    
+    <div class="input-container">
+        <p-inputMask 
+            id="cpf" 
+            name="cpf" 
+            [(ngModel)]="cliente.cpf" 
+            mask="999.999.999-99" 
+            [unmask]="true" 
+            required 
+            #cpf="ngModel" 
+            placeholder="000.000.000-00" 
+            [style]="{'width':'100%'}"
+            [readonly]="cliente.id ? true : false"
+            (click)="avisarCpfBloqueado()">
+        </p-inputMask>
+        <small *ngIf="cpf.invalid && cpf.touched" style="color: red; white-space: nowrap;">CPF Obrigatório.</small>
+    </div>
+  </div>
+
+  <div class="form-linha">
+    <label for="dataNascimento">Data de Nascimento:</label>
+    
+    <div class="input-container">
+      <input pInputText type="date" id="dataNascimento" name="dataNascimento" [(ngModel)]="cliente.dataNascimento" style="width: 100%;">    </div>
+  </div>
+
+  <div class="form-linha">
+    <label for="email">E-mail de Contato:</label>
+    
+    <div class="input-container">
+        <input pInputText type="email" id="email" name="email" [(ngModel)]="cliente.email" placeholder="cliente@email.com" style="width: 100%;">
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 10px; margin-top: 20px;">
+    
+    <p-button 
+        label="Salvar" 
+        icon="pi pi-check" 
+        (click)="salvarCliente(meuForm)" 
+        [disabled]="meuForm.invalid">
+    </p-button>
+
+    <p-button 
+        label="Limpar" 
+        icon="pi pi-eraser" 
+        styleClass="p-button-secondary" 
+        (click)="meuForm.resetForm()">
+    </p-button>
+
+    <p-button 
+        *ngIf="cliente.id" 
+        label="Excluir" 
+        icon="pi pi-trash" 
+        styleClass="p-button-danger" 
+        (click)="excluirCliente()">
+    </p-button>
+
+</div>
+
+  
+</form>
