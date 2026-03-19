@@ -1,12 +1,9 @@
-Log de melhorias Tela PESQUISAR
+Melhorias na tela de Pesquisa
 
-Ao clicar na tela, a tabela ja vir carregando todos os clientes.
-Paginacao para nao mostrar todo os dados na tela.
-- Campo de pesquisa
-Formatado dado de data de nascimento no angular
-Formatar dado de CPF no algular
-Adicionado CPF.PIPE
-
-Adicionado Alerta de ero: se nao tiver resposta do servidor, demonstrar na tela. e nao ficar so sem aparecer os dados.
-
-Adicionado o Filtro por mes.
+1 - Ao clicar na tela, a tabela vir carregando todos os clientes.
+2 - Paginacao para nao mostrar todo os dados na tela.
+3 - Campo de filtro pesquisa por mes.
+4 - Formatado, e apresentado a visualizacao melhor dos dados de data de nascimento no angular
+5 - Formatado, e apresentado a visualizacao melhor dos dados de CPF no algular
+6 - Adicionado CPF.PIPE para melhor visualizacao e correcao.
+7 - Adicionado Alerta de erro: se nao tiver resposta do servidor, abre um pop-up informando que esta sem resposta do servidor.
